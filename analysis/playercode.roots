@@ -1,0 +1,19 @@
+# the player's branch table: init, and the four entries the game calls
+6f4b4
+6f4b8
+6f4bc
+6f4c0
+6f4c4
+# &6FB0C stores &6FB24 + 4*r3 (r3 < 10, a signed guard the analysis doesn't
+# narrow) as the resume address &6FBD4 jumps to: the ten branches of that
+# case table
+6fb24
+6fb28
+6fb2c
+6fb30
+6fb34
+6fb38
+6fb3c
+6fb40
+6fb44
+6fb48
