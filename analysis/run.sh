@@ -10,7 +10,7 @@ set -e
 HERE="$(cd "$(dirname "$0")" && pwd)"
 SUPERSPIDER="${SUPERSPIDER:-$HOME/stuff/superspider}"
 SS="$SUPERSPIDER/_build/default/bin/main.exe"
-APP="$HERE/../extracted/!PacMania"
+APP="$HERE/../game/!PacMania"
 (cd "$SUPERSPIDER" && dune build)
 "$SS" analyse "$APP/PACMANIA,fffff843-2bb2e27b" 8000 --full --roots "$HERE/pacmania.roots" -o "$HERE/pacmania.json"
 "$SS" analyse "$APP/PLAYERCODE,fffff843-21dc9687" 6f4b4 --full --roots "$HERE/playercode.roots" -o "$HERE/playercode.json"

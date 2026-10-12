@@ -16,3 +16,10 @@ recomp/*.log
 recomp/screenshot-*.bmp
 recomp/*.wav
 recomp/savedata/
+
+# The original archive and everything made from it: build.sh (recipe.json)
+# remakes them from the user's own copy.
+PacMania
+*.zip
+extracted/
+game/

@@ -34,10 +34,10 @@ static const struct roger_key keys[] = {
 
 static const struct roger_config config = {
     .title = "Pac-Mania (recompiled)",
-    .image_path = "../extracted/!PacMania/PACMANIA,fffff843-2bb2e27b",
+    .image_path = "../game/!PacMania/PACMANIA,fffff843-2bb2e27b",
     .image = &recomp_image,
     .programs = programs,
-    .appdir = "../extracted/!PacMania",
+    .appdir = "../game/!PacMania",
     .dir_prefixes = prefixes,
     .command_line = "Pacmania",
     .initial_mode = 12,                 /* the desktop's; the program selects its own */

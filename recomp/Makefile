@@ -9,7 +9,7 @@ GEN     := $(wildcard gen/code*.c) gen/entries.c $(wildcard gen_player/code*.c) 
 OBJ     := $(GEN:.c=.o) game.o
 LIBS    := $(shell pkg-config --libs sdl3) -lm -lpthread
 INC     := -I$(ROGER)/include
-APP     := ../extracted/!PacMania
+APP     := ../game/!PacMania
 PROG    := $(APP)/PACMANIA,fffff843-2bb2e27b
 PLAYER  := $(APP)/PLAYERCODE,fffff843-21dc9687
 SSBIN   := $(SS)/_build/default/bin/main.exe

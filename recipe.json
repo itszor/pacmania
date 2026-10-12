@@ -1,0 +1,75 @@
+{
+ "name": "pacmania",
+ "title": "Pac-Mania (Domark / Grandslam, 1991)",
+ "platform": "acorn-archimedes",
+ "doc": "A recipe: how to turn a user's own copy of the game into a native executable. It holds no game data: the inputs are recognised by content (see $SS/tools/weave.py).",
+ "inputs": {
+  "containers": {},
+  "formats": [
+   "arcfs",
+   "zip"
+  ]
+ },
+ "discs": [
+  {
+   "name": "arc",
+   "title": "PacMania: the ArcFS archive holding !PacMania",
+   "known_images": [
+    "a95b18b92aac27155afb9b805b3a8499df7ac7513da7f5878fda5e0e68108cba"
+   ],
+   "key_files": {
+    "!PacMania/!BOOT": "815e1e0beb6a48ce0ab92c5258f0fad8479b1f6de6244148a47b7e48ae298111",
+    "!PacMania/!RUN": "e6416cad53a573cf79d0fe389fe2e7f10b5ff5317ce1bf9d95434795bee1e6be",
+    "!PacMania/!Sprites": "5e6cdf13f9c88b3e9806516bdf975c2e432205a18a0e42d74aae0445c5182da4",
+    "!PacMania/ARCHMAP1": "183add23d5a20648226fb1484daf9cf4c89d59fc3cbe2a5d9cbf48d2b4b354f6",
+    "!PacMania/ARCHMAP2": "d355650453d841f8904218fb98873749ad365c99bbb4746852428e93518b9b88",
+    "!PacMania/ARCHMAP3": "60e406bb0404d8c9fc8b4147e45af032a975b628ce6f8d1f66ebd5e3d3f10f2a",
+    "!PacMania/ARCHMAP4": "3af0cccae92c8b357a3b7c0a96324eeafe026da98a7c8223609e79fea95945e5",
+    "!PacMania/CHAR1ARCH": "847c12e51d93d5f4b9a4498c52d3babbd8b8b92a3be570c4e3bc84833460d9b2",
+    "!PacMania/CHAR2ARCH": "8a6567a5578b7fd65df01ad932962cd1e8a8f5f60f242415154e73a4b80f8ac3",
+    "!PacMania/CHAR3ARCH": "316b67961c9f59cc5589fe5b3b3e820b15cd2a6ac351f8dbab499ef3de6cfd09",
+    "!PacMania/CHAR4ARCH": "35c65a570242f55e0d4a688d0e6ecce96b121c45e11e8951d75fafb228855ab3",
+    "!PacMania/CHARSET": "96efc3bcdae1acececb97774e64b74665bc3371de74a15141cd64de7e65b99d9",
+    "!PacMania/DNE": "456b5c5886c3a8984b703e7ad9a374ff0dc017aba4c97f8b0671ee63635673c0",
+    "!PacMania/EFFECTS": "de1dbbe3fffba90c88e0c785160e6df762f395e0bb061d37a720ad682fc848ec",
+    "!PacMania/FLOOR": "02e1b3d8c1bfeda39c8232d3b182a60521d9de472400b283bd59a107ffe4b107",
+    "!PacMania/Joymod": "95e3f111846f637de07f9c2b1d34b9ec28d594e3a2d8160f9cffbd26620e1dd0",
+    "!PacMania/LS": "3d7cf8ea91a3359e94a7194accdc6c91a2dc56072cfddeee770058a3c392d81b",
+    "!PacMania/MDAT1": "34386f729fcd4c7fb05ae680b46f21f4f8795dbe2b1d7d2bca96f4ac88180273",
+    "!PacMania/MDAT2": "4737f77dac9bd4919e1f7ac852927f7ec6010587329f5f1ebd6fd3529d36bd57",
+    "!PacMania/MDAT3": "f8f8e48916b1335786dcb2b86d235138be688f3d6e0c53d6fd3263ea9ab25d62",
+    "!PacMania/MDAT4": "85d90137c0ad8cc46211e31438696366ef0a93c4e154e5b150c4f55d9ba14cc5",
+    "!PacMania/MemAlloc": "e799448b746e544bfa6c4ca720e4e88d61a897c99da0d18a411ba795647a9c8a",
+    "!PacMania/Monitor": "5e2fbf5d4d21e6ff7ec0bf6b3d6930d0195fd8951f9e291eedbece8c306c823c",
+    "!PacMania/PACMANIA": "c868b8157f05603336180af51fef40433b9dae747a5f53120822c990a4cd6f28",
+    "!PacMania/PILLS": "bf04b84ca8ceb9e5fcc14116f5e5de82ecd8b34707bb4cdeaaa942bb6ff6e0ae",
+    "!PacMania/PLAYERCODE": "244c16712019a1f19df8282c3d240005f76ca21f9d59b127f55327a2eb51e894",
+    "!PacMania/SELECT": "99479a0d09b48cfcccd9cae04c6ec8d45ab4a1479c618a3287f781010f0a274d",
+    "!PacMania/SPRITES": "0e7a28f069abf00787e3c57377dfaa26b65df11c5abaa4d0bf644fbfe8279fad",
+    "!PacMania/THEATRE": "d67dc87e50f6dab4d7e8523f95834156d9b6d1aa9e4c097ae3702c61322b4f19",
+    "!PacMania/TITLE": "a6aecef7f4c4e5d80a256efb47d90b69d6070653ed5c9aec49b9176cd2a236a1",
+    "!PacMania/WALK": "4378b67561af6e1651a70056024773acf057eb033c85344924092ba683b27094"
+   },
+   "game_dirs": [
+    "!PacMania"
+   ]
+  }
+ ],
+ "build": [
+  "python3 -I \"$WEAVE\" extract . INPUTS",
+  "make -C recomp regen",
+  "make -C recomp"
+ ],
+ "output": "recomp/pacmania",
+ "requires": {
+  "superspider": "~/stuff/superspider, or $SUPERSPIDER (dune build): analyse, gen, tools/weave.py",
+  "libroger": "~/stuff/libroger, or make ROGER=...",
+  "host": [
+   "python3",
+   "ocaml + dune",
+   "gcc",
+   "SDL3 (pkg-config sdl3)"
+  ]
+ },
+ "run": "cd recomp && ./pacmania"
+}

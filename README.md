@@ -5,9 +5,18 @@ Archimedes conversion of Namco's Pac-Mania (Krisalis Software: Shaun
 Hollingworth and Pete Harrap, ARM code; Jason Wilson, graphics; Benn
 Daglish, music). Original: `PacMania`, an ArcFS archive of the application.
 
-    $SS/tools/arcfs.py PacMania extracted   unpack the archive -> extracted/ (!PacMania,
-                                            and MonitorFix: an alternative !Run)
-                                            ($SS = ~/stuff/superspider)
+A recipe: this repository holds no game data. It rebuilds the game from
+your own copy, recognised by content (recipe.json):
+
+    ./build.sh PacMania          (the ArcFS archive, or a .zip holding it)
+    cd recomp && ./pacmania
+
+build.sh runs recipe.json's steps with SuperSpider's tools/weave.py
+(~/stuff/superspider, or $SUPERSPIDER; $SS below): it unpacks the archive
+to extracted/arc (!PacMania, and MonitorFix: an alternative !Run) and
+!PacMania to game/ (libroger's appdir), then analyses, translates and
+links. Needs python3, OCaml/dune, gcc and SDL3.
+
     analysis/run.sh                         code/data separation with SuperSpider
                                             (superspider analyse --full) -> pacmania.json,
                                             playercode.json
