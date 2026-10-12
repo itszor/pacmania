@@ -37,6 +37,9 @@ static const struct roger_config config = {
     /* a controller: Z X P L (the KEYS file's directions), A, B and start
      * Space (bounce; start a game) */
     .pad_map = "left=Z,right=X,up=P,down=L,a=Space,b=Space,start=Space",
+    /* the controllers as the joystick, if one is connected: XJoy_Read0 (Joymod
+     * isn't loaded), when its KEYS file says so (Shift+D) */
+    .joystick = ROGER_JOY_KM,
     .image_path = "../game/!PacMania/PACMANIA,fffff843-2bb2e27b",
     .image = &recomp_image,
     .programs = programs,
