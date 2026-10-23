@@ -7,7 +7,7 @@ CC      ?= gcc
 CFLAGS  ?= -O2 -g -w -fno-strict-aliasing $(if $(TRACE),-DRECOMP_TRACE)
 GEN     := $(wildcard gen/code*.c) gen/entries.c $(wildcard gen_player/code*.c) gen_player/entries.c
 OBJ     := $(GEN:.c=.o) game.o
-LIBS    := $(shell pkg-config --libs sdl3) -lm -lpthread
+LIBS    := $(shell pkg-config --libs sdl3) -ljpeg -lm -lpthread
 INC     := -I$(ROGER)/include
 APP     := ../game/!PacMania
 PROG    := $(APP)/PACMANIA,fffff843-2bb2e27b
